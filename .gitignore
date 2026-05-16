@@ -1,4 +1,4 @@
-# --- General & IDEs ---
+# -- General & IDEs --
 .vs/
 .idea/
 .vscode/*
