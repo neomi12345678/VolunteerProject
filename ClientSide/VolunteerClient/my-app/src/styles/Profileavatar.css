@@ -1,0 +1,274 @@
+/* ══════════════════════════════════════════
+   ProfileAvatar — pav-*
+   מוסיף לקובץ styleLayout.css
+   ══════════════════════════════════════════ */
+
+/* ── עיגול בHeader ────────────────────────── */
+.pav-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .pav-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e8b75c, #c8943c);
+    border: 2px solid rgba(232, 183, 92, 0.4);
+    color: #1a1208;
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.2s;
+    box-shadow: 0 0 0 0 rgba(232, 183, 92, 0.4);
+    letter-spacing: 0.02em;
+  }
+  
+  .pav-circle:hover {
+    transform: scale(1.08);
+    border-color: #e8b75c;
+    box-shadow: 0 0 0 4px rgba(232, 183, 92, 0.15);
+  }
+  
+  .pav-circle--open {
+    border-color: #e8b75c;
+    box-shadow: 0 0 0 4px rgba(232, 183, 92, 0.2);
+  }
+  
+  .pav-status-dot {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #2dd4bf;
+    border: 2px solid #1a1208;
+  }
+  
+  /* ── Toast קטן ────────────────────────────── */
+  .pav-saved {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: #1a1208;
+    border: 1px solid rgba(45, 212, 191, 0.4);
+    color: #2dd4bf;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+    z-index: 200;
+    animation: pav-pop 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+    pointer-events: none;
+  }
+  
+  @keyframes pav-pop {
+    from { opacity: 0; transform: translateY(-6px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  
+  /* ── Dropdown ─────────────────────────────── */
+  .pav-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 300px;
+    background: #fff;
+    border: 1.5px solid #ddd4c0;
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(26, 18, 8, 0.18), 0 4px 16px rgba(26, 18, 8, 0.08);
+    z-index: 200;
+    overflow: hidden;
+    animation: pav-dropdown-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  
+  @keyframes pav-dropdown-in {
+    from { opacity: 0; transform: translateY(-10px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  
+  /* ── Header section ───────────────────────── */
+  .pav-dd-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid #ede6d8;
+    background: #1a1208;
+  }
+  
+  .pav-dd-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e8b75c, #c8943c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1208;
+    flex-shrink: 0;
+    border: 2px solid rgba(232, 183, 92, 0.35);
+  }
+  
+  .pav-dd-name {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f5edd6;
+    line-height: 1.2;
+  }
+  
+  .pav-dd-email {
+    font-size: 11px;
+    color: rgba(245, 237, 214, 0.4);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+  }
+  
+  /* ── Info rows ────────────────────────────── */
+  .pav-dd-info {
+    padding: 14px 20px 10px;
+    border-bottom: 1px solid #ede6d8;
+  }
+  
+  .pav-dd-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: rgba(26, 18, 8, 0.55);
+    padding: 4px 0;
+  }
+  
+  .pav-dd-row-icon { font-size: 13px; }
+  
+  /* ── Edit button ──────────────────────────── */
+  .pav-dd-edit-btn {
+    display: block;
+    width: calc(100% - 32px);
+    margin: 14px 16px;
+    padding: 11px;
+    background: #1a1208;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #e8b75c;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.04em;
+  }
+  
+  .pav-dd-edit-btn:hover { background: #2e1f0a; }
+  
+  /* ── Edit form ────────────────────────────── */
+  .pav-dd-form {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .pav-dd-form-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26, 18, 8, 0.35);
+    margin-bottom: 4px;
+  }
+  
+  .pav-dd-field { display: flex; flex-direction: column; gap: 5px; }
+  
+  .pav-dd-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(26, 18, 8, 0.35);
+  }
+  
+  .pav-dd-input {
+    padding: 9px 12px;
+    background: #faf7f2;
+    border: 1.5px solid #ddd4c0;
+    border-radius: 8px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    color: #1a1208;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .pav-dd-input:focus {
+    border-color: #e8b75c;
+    box-shadow: 0 0 0 3px rgba(232, 183, 92, 0.1);
+    background: #fff;
+  }
+  
+  /* ── Form actions ─────────────────────────── */
+  .pav-dd-form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  
+  .pav-dd-cancel {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    border: 1.5px solid #ddd4c0;
+    border-radius: 8px;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(26, 18, 8, 0.45);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .pav-dd-cancel:hover {
+    border-color: rgba(26, 18, 8, 0.25);
+    color: #1a1208;
+  }
+  
+  .pav-dd-save {
+    flex: 2;
+    padding: 10px;
+    background: #1a1208;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #e8b75c;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+  }
+  
+  .pav-dd-save:hover:not(:disabled) {
+    background: #2e1f0a;
+  }
+  
+  .pav-dd-save:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

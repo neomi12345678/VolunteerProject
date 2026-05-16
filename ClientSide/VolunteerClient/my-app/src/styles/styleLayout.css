@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Sora:wght@300;400;500;600&display=swap');
+
+/* ─── LAYOUT SHELL ─────────────────────────────────────────── */
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f0e8;
+  font-family: 'Sora', sans-serif;
+}
+
+
+.layout-main {
+  flex: 1;
+  padding: 36px 5%;
+}
+
+/* ─── HEADER ────────────────────────────────────────────────── */
+.layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #1a1208;
+  border-bottom: 1px solid rgba(232,183,92,0.15);
+  backdrop-filter: blur(12px);
+}
+
+.layout-header-inner {
+  width: 95%;
+  max-width: 90rem;
+  margin: 0 auto;
+  height: clamp(3.5rem, 6vw, 4.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.layout-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.layout-logo-mark {
+  width: clamp(1.8rem, 3vw, 2.2rem);
+  height: clamp(1.8rem, 3vw, 2.2rem);
+  background: #e8b75c;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.layout-logo-mark svg {
+  width: 55%;
+  height: 55%;
+  fill: #1a1208;
+}
+.layout-logo-name {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 700;
+  color: #f5edd6;
+  letter-spacing: 0.01em;
+}
+
+/* Nav links */
+.layout-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.layout-nav-link {
+  position: relative;
+  padding: 0.4rem 0.9rem;
+  font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+  font-weight: 500;
+  color: rgba(245,237,214,0.55);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.02em;
+}
+.layout-nav-link:hover {
+  color: #f5edd6;
+  background: rgba(255,255,255,0.05);
+}
+.layout-nav-link.active {
+  color: #e8b75c;
+  background: rgba(232,183,92,0.1);
+}
+.layout-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0.9rem;
+  right: 0.9rem;
+  height: 2px;
+  background: #e8b75c;
+  border-radius: 2px;
+}
+
+/* Logout */
+.layout-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.1rem;
+  background: transparent;
+  border: 1px solid rgba(232,183,92,0.25);
+  border-radius: 0.6rem;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+  font-weight: 500;
+  color: rgba(245,237,214,0.6);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.layout-logout:hover {
+  border-color: rgba(232,183,92,0.6);
+  color: #f5edd6;
+  background: rgba(232,183,92,0.07);
+}
+.layout-logout svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────── */
+.layout-footer {
+  background: #1a1208;
+  border-top: 1px solid rgba(232,183,92,0.1);
+}
+
+.layout-footer-inner {
+  width: 95%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 2.5vw, 1.75rem) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.layout-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.layout-footer-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  background: #e8b75c;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.layout-footer-copy {
+  font-size: clamp(0.7rem, 1vw, 0.78rem);
+  color: rgba(245,237,214,0.3);
+  letter-spacing: 0.02em;
+}
+
+.layout-footer-right {
+  font-size: clamp(0.7rem, 1vw, 0.78rem);
+  color: rgba(245,237,214,0.18);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+.layout-nav-chat {
+  position: relative;
+  color: #e8b75c !important;
+}
+
+/* ─── RIGHT SECTION (avatar + logout) ──────────────────────── */
+.layout-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.layout-nav-badge {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e8b75c;
+  box-shadow: 0 0 6px rgba(232, 183, 92, 0.8);
+  animation: hv-pulse 1.8s ease-in-out infinite;
+}
+

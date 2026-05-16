@@ -1,0 +1,259 @@
+
+/* ── styleNewRequest.css ── */
+
+.req-root {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  animation: lv-fadeUp 0.4s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+@keyframes lv-fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.req-header { margin-bottom: 28px; }
+.req-tag {
+  font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; color: #c8943c; margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.req-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700; color: #1a1208; line-height: 1.1;
+}
+
+/* ── Card ── */
+.req-card {
+  background: #fff;
+  border: 1px solid rgba(200,148,60,0.14);
+  border-radius: 20px;
+  padding: 32px 36px;
+  box-shadow: 0 4px 28px rgba(26,18,8,0.06);
+  margin-bottom: 16px;
+}
+
+/* ── Field ── */
+.req-field { margin-bottom: 24px; }
+.req-field:last-child { margin-bottom: 0; }
+
+.req-lbl {
+  display: block;
+  font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(26,18,8,0.45); margin-bottom: 10px;
+}
+.req-required { color: #c0392b; }
+
+/* ── Textarea ── */
+.req-textarea {
+  width: 100%; background: #fdf6ee;
+  border: 2px solid rgba(232,183,92,0.3);
+  border-radius: 14px; padding: 16px 18px;
+  font-family: 'Sora', sans-serif; font-size: 14px;
+  color: #1a1208; line-height: 1.7; resize: vertical;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.req-textarea::placeholder { color: rgba(26,18,8,0.3); }
+.req-textarea:focus {
+  border-color: #e8b75c;
+  box-shadow: 0 0 0 4px rgba(232,183,92,0.12);
+}
+.req-textarea-footer {
+  display: flex; justify-content: flex-end;
+  margin-top: 6px; min-height: 18px;
+}
+.req-count { font-size: 11px; color: rgba(26,18,8,0.3); font-family: 'Sora', sans-serif; }
+.req-count-warn { color: #c0392b; font-weight: 600; }
+
+/* ── Schedule section title ── */
+.req-schedule-title {
+  display: flex; align-items: center; gap: 9px;
+  font-family: 'Fraunces', serif; font-size: 1.15rem;
+  font-weight: 700; color: #1a1208; margin-bottom: 24px;
+}
+.req-schedule-icon { font-size: 1.2rem; }
+
+/* ── Day picker ── */
+.req-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.req-day-btn {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 3px; padding: 10px 4px;
+  background: #fdf6ee;
+  border: 2px solid transparent;
+  border-radius: 12px; cursor: pointer;
+  transition: all 0.18s;
+  font-family: 'Sora', sans-serif;
+}
+.req-day-btn:hover {
+  border-color: #e8b75c;
+  background: rgba(232,183,92,0.1);
+}
+.req-day-active {
+  background: #1a1208 !important;
+  border-color: #1a1208 !important;
+}
+.req-day-active .req-day-short,
+.req-day-active .req-day-full { color: #f5edd6 !important; }
+
+.req-day-short {
+  font-size: 13px; font-weight: 700; color: #1a1208;
+  transition: color 0.18s;
+}
+.req-day-full {
+  font-size: 9px; color: rgba(26,18,8,0.4);
+  letter-spacing: 0.02em; transition: color 0.18s;
+}
+
+/* ── Quick time buttons ── */
+.req-quick-times {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.req-quick-btn {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px; padding: 12px 8px;
+  background: #fdf6ee;
+  border: 2px solid transparent;
+  border-radius: 14px; cursor: pointer;
+  transition: all 0.18s; font-family: 'Sora', sans-serif;
+}
+.req-quick-btn:hover {
+  border-color: #e8b75c;
+  background: rgba(232,183,92,0.1);
+}
+.req-quick-active {
+  background: rgba(232,183,92,0.18) !important;
+  border-color: #e8b75c !important;
+}
+.req-quick-label {
+  font-size: 12px; font-weight: 700; color: #1a1208;
+}
+.req-quick-time {
+  font-size: 10px; color: rgba(26,18,8,0.45);
+  font-family: monospace;
+}
+
+/* ── Time row (from → to) ── */
+.req-time-row {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.req-time-half { flex: 1; }
+.req-time-arrow {
+  margin-top: 30px; font-size: 18px;
+  color: rgba(26,18,8,0.25); flex-shrink: 0;
+}
+
+/* ── Time / select inputs ── */
+.req-input {
+  width: 100%; padding: 13px 16px;
+  font-family: 'Sora', sans-serif; font-size: 14px;
+  border: 2px solid rgba(232,183,92,0.3);
+  border-radius: 12px; background: #fdf6ee;
+  color: #1a1208; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.req-input:focus {
+  border-color: #e8b75c;
+  box-shadow: 0 0 0 4px rgba(232,183,92,0.12);
+}
+
+/* ── Error states ── */
+.req-input-err { border-color: #c0392b !important; }
+.req-err-msg {
+  display: block; font-size: 11px; font-weight: 600;
+  color: #c0392b; margin-top: 5px;
+  font-family: 'Sora', sans-serif;
+}
+
+/* ── Summary chip ── */
+.req-summary-chip {
+  margin-top: 18px; padding: 10px 16px;
+  background: rgba(232,183,92,0.15);
+  border: 1.5px solid rgba(232,183,92,0.4);
+  border-radius: 10px;
+  font-family: 'Sora', sans-serif; font-size: 13px;
+  font-weight: 600; color: #1a1208;
+  text-align: center;
+  animation: lv-fadeUp 0.25s ease both;
+}
+
+/* ── Submit ── */
+.req-submit {
+  width: 100%; padding: 17px;
+  border-radius: 16px; border: none;
+  background: #1a1208;
+  font-family: 'Sora', sans-serif; font-size: 14px;
+  font-weight: 700; color: #f5edd6;
+  letter-spacing: 0.04em; cursor: pointer;
+  transition: all 0.22s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.req-submit:hover:not(:disabled) {
+  background: #e8b75c; color: #1a1208;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(232,183,92,0.3);
+}
+.req-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Success ── */
+.req-success {
+  text-align: center; padding: 80px 40px;
+  background: #fff; border-radius: 20px;
+  border: 1px solid rgba(200,148,60,0.14);
+  box-shadow: 0 4px 28px rgba(26,18,8,0.06);
+  animation: lv-fadeUp 0.4s cubic-bezier(0.22,1,0.36,1) both;
+}
+.req-success-icon { font-size: 3.5rem; margin-bottom: 20px; }
+.req-success-title {
+  font-family: 'Fraunces', serif; font-size: 2rem;
+  font-weight: 700; color: #1a1208; margin-bottom: 12px;
+}
+.req-success-sub {
+  font-family: 'Sora', sans-serif; font-size: 14px;
+  color: rgba(26,18,8,0.5); line-height: 1.65;
+  max-width: 420px; margin: 0 auto;
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .req-card { padding: 22px 18px; }
+  .req-days { grid-template-columns: repeat(4, 1fr); }
+  .req-quick-times { grid-template-columns: 1fr; }
+  .req-time-row { flex-direction: column; gap: 0; }
+  .req-time-arrow { display: none; }
+}
+/* ── New Request Button ── */
+.req-new-btn {
+  margin-top: 28px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: 2px solid #e8b75c;
+  background: transparent;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+
+  color: #1a1208;
+  cursor: pointer;
+
+  transition: all 0.22s ease;
+}
+
+.req-new-btn:hover {
+  background: #e8b75c;
+  color: #1a1208;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(232,183,92,0.3);
+}

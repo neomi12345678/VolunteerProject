@@ -1,0 +1,322 @@
+/* ============================================================
+   Together – Layout  (Sidebar · Footer · AdminLayout)
+   Aesthetic: Warm Luxury Editorial — cream, linen, walnut
+   ============================================================ */
+
+   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600;700&display=swap');
+
+   /* ── Global Design Tokens ──────────────────────────────────── */
+   :root {
+     --cream:        #FAF8F3;
+     --warm-white:   #FFFFFF;
+     --linen:        #F3EDE3;
+     --parchment:    #EBE2D5;
+     --parchment-2:  #E2D8C8;
+     --walnut:       #7B4A1C;
+     --walnut-deep:  #5A3410;
+     --caramel:      #C4762B;
+     --amber:        #E09B3D;
+     --amber-light:  #EDBA6A;
+     --espresso:     #1C0A00;
+     --bark:         #4A2E14;
+     --driftwood:    #8B6A4A;
+     --sand:         #B8A080;
+     --smoke:        #D4C4B0;
+     --smoke-light:  #E8DFD3;
+   
+     --border:       rgba(124,74,30,0.13);
+     --border-soft:  rgba(124,74,30,0.08);
+     --border-strong: rgba(124,74,30,0.25);
+   
+     --shadow-xs:  0 1px 2px rgba(80,40,10,0.07);
+     --shadow-sm:  0 1px 4px rgba(80,40,10,0.09), 0 2px 8px rgba(80,40,10,0.05);
+     --shadow:     0 2px 8px rgba(80,40,10,0.09), 0 4px 16px rgba(80,40,10,0.06);
+     --shadow-md:  0 4px 16px rgba(80,40,10,0.11), 0 8px 24px rgba(80,40,10,0.07);
+     --shadow-lg:  0 8px 32px rgba(80,40,10,0.13), 0 16px 48px rgba(80,40,10,0.08);
+   
+     --radius-sm: 6px;
+     --radius:    10px;
+     --radius-lg: 16px;
+     --radius-xl: 22px;
+   }
+   
+   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+   
+   html {
+     width: 100%;
+     height: 100%;
+   }
+   
+   body {
+     width: 100%;
+     min-height: 100vh;
+     background: var(--cream);
+     font-family: 'Jost', sans-serif;
+     color: var(--bark);
+     -webkit-font-smoothing: antialiased;
+   }
+   
+   /* React root */
+   #root {
+     width: 100%;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+   }
+   
+   /* ── AdminLayout ─────────────────────────────────────────────── */
+   
+   .admin-layout {
+     display: flex;
+     width: 100%;
+     min-height: 100vh;
+     background: var(--cream);
+   }
+   
+   .admin-layout-body {
+     flex: 1 1 0%;
+     min-width: 0;
+     width: 0;
+     margin-left: 240px; /* same as sidebar width */
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     background: var(--cream);
+   }
+   
+   .admin-layout-main {
+     flex: 1;
+     overflow-y: auto;
+     min-width: 0;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+   }
+   
+   /* ── Sidebar ─────────────────────────────────────────────────── */
+   
+   .sidebar {
+     width: 240px;
+     flex-shrink: 0;
+     background: var(--linen);
+     border-right: 1px solid var(--border);
+     display: flex;
+     flex-direction: column;
+     padding: 0 0 24px;
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 100vh;
+     overflow-y: auto;
+     z-index: 100;
+   }
+   
+   /* Brand header */
+   .sidebar-brand {
+     display: flex;
+     align-items: center;
+     gap: 11px;
+     padding: 28px 22px 22px;
+     border-bottom: 1px solid var(--border);
+     margin-bottom: 8px;
+   }
+   
+   .sidebar-brand-icon {
+     width: 38px;
+     height: 38px;
+     border-radius: var(--radius);
+     background: linear-gradient(135deg, var(--caramel), var(--walnut));
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 17px;
+     box-shadow: 0 4px 12px rgba(196,118,43,0.30);
+     flex-shrink: 0;
+   }
+   
+   .sidebar-brand-name {
+     font-family: 'DM Serif Display', serif;
+     font-size: 21px;
+     color: var(--espresso);
+     letter-spacing: 0.01em;
+   }
+   
+   .sidebar-divider {
+     height: 1px;
+     background: var(--border);
+     margin: 6px 18px 10px;
+   }
+   
+   /* Section label */
+   .sidebar-section-label {
+     font-size: 9.5px;
+     font-weight: 700;
+     letter-spacing: 0.16em;
+     text-transform: uppercase;
+     color: var(--sand);
+     padding: 8px 22px 6px;
+   }
+   
+   /* Nav */
+   .sidebar-nav {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     gap: 2px;
+     padding: 4px 12px;
+   }
+   
+   .nav-item {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     padding: 10px 13px;
+     border-radius: var(--radius);
+     font-family: 'Jost', sans-serif;
+     font-size: 13.5px;
+     font-weight: 400;
+     color: var(--driftwood);
+     cursor: pointer;
+     text-decoration: none;
+     transition: background 0.17s, color 0.17s;
+     letter-spacing: 0.01em;
+     border: 1px solid transparent;
+   }
+   
+   .nav-item svg, .nav-item .nav-icon {
+     opacity: 0.65;
+     flex-shrink: 0;
+     transition: opacity 0.17s;
+   }
+   
+   .nav-item:hover {
+     background: var(--parchment);
+     color: var(--walnut);
+   }
+   
+   .nav-item:hover svg,
+   .nav-item:hover .nav-icon {
+     opacity: 1;
+   }
+   
+   .nav-item--active {
+     background: var(--warm-white);
+     color: var(--walnut);
+     font-weight: 600;
+     border-color: var(--border);
+     box-shadow: var(--shadow-xs);
+   }
+   
+   .nav-item--active svg,
+   .nav-item--active .nav-icon {
+     opacity: 1;
+   }
+   
+   /* Sidebar footer */
+   .sidebar-footer {
+     margin: 0 12px;
+     padding: 14px 10px;
+     border: 1px solid var(--border);
+     border-radius: var(--radius);
+     background: var(--warm-white);
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-top: auto;
+   }
+   
+   .sidebar-avatar {
+     width: 34px;
+     height: 34px;
+     border-radius: 50%;
+     background: linear-gradient(135deg, var(--amber-light), var(--caramel));
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-family: 'DM Serif Display', serif;
+     font-size: 15px;
+     color: var(--warm-white);
+     flex-shrink: 0;
+     box-shadow: 0 2px 8px rgba(196,118,43,0.25);
+   }
+   
+   .sidebar-admin-name {
+     font-size: 13px;
+     font-weight: 600;
+     color: var(--espresso);
+     line-height: 1.2;
+   }
+   
+   .sidebar-admin-role {
+     font-size: 10.5px;
+     color: var(--sand);
+     letter-spacing: 0.08em;
+     text-transform: uppercase;
+     margin-top: 2px;
+   }
+   
+   /* ── Footer ──────────────────────────────────────────────────── */
+   
+   .admin-footer {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 14px 32px;
+     border-top: 1px solid var(--border);
+     background: var(--warm-white);
+     flex-shrink: 0;
+   }
+   
+   .admin-footer-left {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+   }
+   
+   .admin-footer-brand {
+     font-family: 'DM Serif Display', serif;
+     font-size: 14px;
+     color: var(--walnut);
+     letter-spacing: 0.02em;
+   }
+   
+   .admin-footer-sep {
+     color: var(--smoke);
+     font-size: 12px;
+   }
+   
+   .admin-footer-copy {
+     font-size: 12px;
+     color: var(--sand);
+   }
+   
+   .admin-footer-right { display: flex; align-items: center; }
+   
+   .admin-footer-status {
+     display: flex;
+     align-items: center;
+     gap: 7px;
+     font-size: 12px;
+     color: var(--driftwood);
+   }
+   
+   .admin-footer-dot {
+     width: 6px;
+     height: 6px;
+     border-radius: 50%;
+     background: #7DBF8A;
+     animation: footerPulse 2.5s ease-in-out infinite;
+   }
+   
+   @keyframes footerPulse {
+     0%, 100% { opacity: 1; }
+     50%       { opacity: 0.4; }
+   }
+   
+   /* ── Responsive ──────────────────────────────────────────────── */
+   @media (max-width: 720px) {
+     .sidebar { display: none; }
+     .admin-layout-body { margin-left: 0; }
+     .admin-footer { padding: 12px 20px; }
+   }
+   

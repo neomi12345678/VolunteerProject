@@ -1,0 +1,27 @@
+# --- General & IDEs ---
+.vs/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+.env
+.DS_Store
+Thumbs.db
+
+# --- Python (Server Side) ---
+**/venv/
+**/__pycache__/
+*.pyc
+
+# --- Node & Frontend (Client Side) ---
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/build/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+
+# --- AI Models & Heavy Files ---
+**/*.safetensors
+**/*.onnx

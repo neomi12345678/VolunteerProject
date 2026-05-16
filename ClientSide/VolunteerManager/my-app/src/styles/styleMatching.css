@@ -1,0 +1,147 @@
+/* ── styleMatching.css ── */
+
+/* כפתור Run Matching */
+.btn-match {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px;
+    background: #1a1208;
+    color: #f5edd6;
+    border: none; border-radius: 12px;
+    font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700;
+    cursor: pointer; transition: all 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .btn-match:hover:not(:disabled) {
+    background: #e8b75c; color: #1a1208;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(232,183,92,0.3);
+  }
+  .btn-match:disabled { opacity: 0.6; cursor: not-allowed; }
+  
+  .match-spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid rgba(245,237,214,0.3);
+    border-top-color: #f5edd6;
+    border-radius: 50%;
+    animation: ms-spin 0.7s linear infinite;
+  }
+  @keyframes ms-spin { to { transform: rotate(360deg); } }
+  
+  /* ── תוצאות ── */
+  .match-results-section {
+    background: #fff;
+    border: 1px solid rgba(232,183,92,0.25);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(26,18,8,0.06);
+    animation: ms-fadeUp 0.35s ease both;
+  }
+  
+  @keyframes ms-fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  .match-results-header {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 18px;
+  }
+  .match-results-title {
+    font-family: 'Fraunces', serif; font-size: 1.2rem;
+    font-weight: 700; color: #1a1208;
+  }
+  
+  .match-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 14px;
+  }
+  
+  /* ── כרטיס שידוך ── */
+  .match-card {
+    background: #fdf6ee;
+    border: 1.5px solid rgba(232,183,92,0.25);
+    border-radius: 14px;
+    padding: 16px 18px;
+    transition: box-shadow 0.18s;
+  }
+  .match-card:hover {
+    box-shadow: 0 6px 18px rgba(26,18,8,0.08);
+  }
+  
+  .match-card-top {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 12px;
+  }
+  .match-category {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #c8943c;
+    font-family: 'Sora', sans-serif;
+  }
+  .match-score {
+    font-size: 11px; font-weight: 700;
+    background: rgba(26,18,8,0.07);
+    padding: 3px 9px; border-radius: 20px;
+    color: #1a1208; font-family: 'Sora', sans-serif;
+  }
+  
+  .match-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 12px;
+  }
+  .match-side {
+    flex: 1; background: #fff;
+    border-radius: 10px; padding: 10px 12px;
+    border: 1px solid rgba(26,18,8,0.07);
+  }
+  .match-role-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(26,18,8,0.4);
+    margin-bottom: 4px; font-family: 'Sora', sans-serif;
+  }
+  .match-name {
+    font-size: 14px; font-weight: 600; color: #1a1208;
+    font-family: 'Sora', sans-serif;
+  }
+  .match-id {
+    font-size: 11px; color: rgba(26,18,8,0.38);
+    font-family: 'Sora', sans-serif;
+  }
+  .match-arrow {
+    font-size: 18px; color: #e8b75c; flex-shrink: 0;
+  }
+  
+  .match-meta {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    font-size: 11px; color: rgba(26,18,8,0.5);
+    font-family: 'Sora', sans-serif;
+  }
+  
+  /* ── Banners ── */
+  .match-error-banner {
+    padding: 12px 16px; margin-bottom: 16px;
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.2);
+    border-radius: 10px;
+    font-size: 13px; font-weight: 600; color: #c0392b;
+    font-family: 'Sora', sans-serif;
+  }
+  
+  .match-empty-banner {
+    padding: 14px 18px; margin-bottom: 16px;
+    background: rgba(232,183,92,0.1);
+    border: 1px solid rgba(232,183,92,0.25);
+    border-radius: 10px;
+    font-size: 13px; color: rgba(26,18,8,0.55);
+    font-family: 'Sora', sans-serif; text-align: center;
+  }
+  
+  .btn-ghost {
+    padding: 7px 14px; background: transparent;
+    border: 1.5px solid rgba(26,18,8,0.15);
+    border-radius: 8px; cursor: pointer;
+    font-size: 12px; font-family: 'Sora', sans-serif;
+    color: rgba(26,18,8,0.5); transition: all 0.15s;
+  }
+  .btn-ghost:hover { border-color: #1a1208; color: #1a1208; }
