@@ -1,2 +1,3 @@
 # VolunteerProject
- This system automates the matching process between volunteers and requests. It uses an NLP pipeline to classify user requests from raw text into predefined      categories, followed by a custom optimization algorithm that matches the best available volunteer based on location and skills.
+
+Smart volunteer matching platform built with C# (.NET) and React. The system uses AI-based request classification and a dynamic optimization algorithm to intelligently match volunteers with people in need based on skills, availability, and location. Includes real-time communication features.
