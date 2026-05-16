@@ -23,7 +23,7 @@ const AuthInitializer = ({ children }: { children: React.ReactNode }) => {
         const user = await loginByToken(token);
         setSession(token);
         dispatch(authSuccess({ user, token }));
-      } catch (err: any) {  // ← שני את catch לקבל err
+      } catch (err: any) {  
         console.log('TOKEN:', token);
         console.log('ERROR STATUS:', err?.response?.status);
         console.log('ERROR DATA:', err?.response?.data);

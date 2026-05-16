@@ -16,9 +16,7 @@ using BCrypt.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ==========================
 // 0️⃣ AutoMapper
-// ==========================
 builder.Services.AddAutoMapper(typeof(MyMapper));
 
 // ==========================
